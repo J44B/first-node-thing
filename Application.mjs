@@ -12,13 +12,16 @@ var userMessage = process.argv[2];
 
 var currentDate = new Date(Date.now());
 
-var dirName = `${currentDate.getFullYear()}-${
-    currentDate.getMonth() + 1
-}-${currentDate.getDate()}`;
+var dirName = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1)
+    .toString()
+    .padStart(2, '0')}-${currentDate.getDate().toString().padStart(2, '0')}`;
 
 console.log(dirName); // YYYY-MM-DD
 
-var fileName = `${currentDate.getHours()}-${currentDate.getMinutes()}.txt`;
+var fileName = `${currentDate.getHours()}-${currentDate
+    .getMinutes()
+    .toString()
+    .padStart(2, '0')}.txt`;
 
 console.log(fileName); // HH-mm > needs .padStart(2, "0")
 
